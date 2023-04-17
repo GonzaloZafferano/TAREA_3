@@ -1,0 +1,57 @@
+<div class="container contenedor bg-light p-1">
+  <h3 class="text-dark text-center">Complete sus datos para ingresar</h3>
+  <form id="frmLogin" (ngSubmit)="login()">
+    <ion-list class="">
+
+      <!--CORREO-->
+      <div class="form-floating mb-0 d-flex flex-column align-items-start font-weight-bold">
+        <label class="text-start text-dark" for="floatingInputValue">Ingrese su dirección de correo:</label>
+        <!--REQUIERE LA PROPIEDAD 'name' para que funcione el NGMODEL-->
+        <input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com"
+          (input)="validadCampoVacio()" name="email" [(ngModel)]="email">
+        <div class="letra-rojo-bold">
+          <p>{{mensajeEmail}}</p>
+        </div>
+      </div>
+
+      <!--PASSWORD-->
+      <div class="form-floating mb-0 d-flex flex-column align-items-start">
+        <label for="floatingInputPassword" class="text-left text-dark font-weight-bold">Ingrese su contraseña:</label>
+        <input type="password" class="form-control" id="floatingInputPassword" placeholder="Password" name="password"
+          (input)="validadCampoVacio()" [(ngModel)]="password">
+        <div class="letra-rojo-bold m-0">
+          <p>{{mensajePass}}</p>
+        </div>
+      </div>
+
+      <div class="m-2">
+        <ion-toolbar class="m-0">  
+          <ion-label>¿No posee una cuenta? <span class="d-block"> Regístrese <a href="/registro">AQUÍ</a></span></ion-label> 
+          <ion-buttons slot="secondary">
+            <!--LOGIN-->
+            <ion-button color="success" fill="solid" type="submit" shape="round" id="btn-send"> 
+              <ion-title class="font-weight-bold">Login</ion-title>
+              <ion-icon slot="end" size="large" name="log-in"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </div>
+     
+      <div class="letra-rojo-bold">
+        <p>{{mensajeError}}</p>
+      </div>
+    </ion-list>
+  </form>  
+  <ion-button color="secondary" fill="solid" type="submit" shape="round" id="btn-usuarioUno" (click)="cargarUsuario(0)"> 
+    <ion-title class="font-weight-bold">Usuario 1</ion-title>
+    <ion-icon slot="start" size="large" name="person-circle"></ion-icon>
+  </ion-button>
+  <ion-button color="secondary" fill="solid" type="submit" shape="round" id="btn-usuarioDos" (click)="cargarUsuario(1)"> 
+    <ion-title class="font-weight-bold">Usuario 2</ion-title>
+    <ion-icon slot="start" size="large" name="person-circle"></ion-icon>
+  </ion-button>
+  <ion-button color="secondary" fill="solid" type="submit" shape="round" id="btn-usuarioTres" (click)="cargarUsuario(2)"> 
+    <ion-title class="font-weight-bold">Usuario 3</ion-title>
+    <ion-icon slot="start" size="large" name="person-circle"></ion-icon>
+  </ion-button> 
+</div>

@@ -1,0 +1,19 @@
+<div class="contenedor">
+  <ion-header [translucent]="true">      
+    <ion-title class="text-center">
+          <h3>
+            BIENVENIDO
+          </h3>
+        </ion-title>     
+      </ion-header>
+      <ion-content color="primary" [fullscreen]="true">
+        <div class="d-flex justify-content-center p-2">
+          <ion-buttons slot="center">      
+            <ion-button color="danger" fill="solid" shape="round" id="btn-logout" (click)="logout()">
+              <ion-title class="font-weight-bold">Cerrar sesion</ion-title>
+              <ion-icon  size="large" slot="end" name="log-out"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </div>
+      </ion-content>
+</div>

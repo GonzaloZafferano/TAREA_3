@@ -7,6 +7,9 @@ import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
 import { environment } from './environments/environment';
 
+//Agregamos ESTO
+import { AngularFireModule } from '@angular/fire/compat';
+
 if (environment.production) {
   enableProdMode();
 }
@@ -15,6 +18,9 @@ bootstrapApplication(AppComponent, {
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     importProvidersFrom(IonicModule.forRoot({})),
-    provideRouter(routes),
+
+    //Y ESTO
+    importProvidersFrom(AngularFireModule.initializeApp(environment.firebaseConfig)),
+    provideRouter(routes)
   ],
 });
